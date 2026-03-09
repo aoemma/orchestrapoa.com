@@ -8,15 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* Definindo as cores do MIV */
+        /* MIV Orchestra - Paleta Areia */
         :root {
-            --cor-areia: #F2E9E1; 
-            --cor-texto: #3F2E23;
+            --cor-areia-escuro: #DCCFBF; /* Areia mais presente */
+            --cor-areia-claro: #E8D8C3; 
+            --cor-texto: #2C1E16; /* Marrom profundo */
         }
 
         body {
-            background-color: var(--cor-areia); /* Fundo areia */
-            color: var(--cor-texto); /* Texto marrom escuro */
+            background-color: var(--cor-areia-claro);
+            color: var(--cor-texto);
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 60px 20px;
@@ -33,35 +34,34 @@
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 300;
-            letter-spacing: 10px;
+            letter-spacing: 12px;
             text-transform: uppercase;
             margin: 0;
-            font-style: normal; /* Sem itálico */
+            font-style: normal; /* Zero itálico */
         }
 
         .subtitle {
             font-size: 0.8rem;
-            letter-spacing: 4px;
-            opacity: 0.7;
-            margin-top: 15px;
+            letter-spacing: 5px;
+            opacity: 0.8;
+            margin-top: 20px;
             font-weight: 400;
         }
 
-        /* Grid das fotos */
+        /* Grid Editorial */
         .gallery {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .gallery-item {
             overflow: hidden;
-            background-color: rgba(63, 46, 35, 0.05);
-            display: flex;
+            background-color: var(--cor-areia-escuro);
         }
 
         .gallery-item img {
@@ -69,31 +69,33 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            filter: grayscale(10%); /* Toque editorial leve */
-            transition: transform 0.8s ease;
+            transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .gallery-item img:hover {
             transform: scale(1.05);
-            filter: grayscale(0%);
         }
 
-        /* Deixando algumas fotos maiores para dar ritmo */
+        /* Layout dinâmico */
         .tall { grid-row: span 2; }
         .wide { grid-column: span 2; }
 
         footer {
-            margin-top: 100px;
+            margin-top: 120px;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 300;
-            font-style: normal; /* Sem itálico */
-            letter-spacing: 1px;
+            font-style: normal; /* Zero itálico */
+            letter-spacing: 2px;
+            text-align: center;
+            border-top: 1px solid rgba(44, 30, 22, 0.1);
+            padding-top: 40px;
+            width: 100%;
+            max-width: 600px;
         }
 
-        /* Ajuste para celular */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
+            h1 { font-size: 2.5rem; letter-spacing: 6px; }
             .wide { grid-column: span 1; }
         }
     </style>
@@ -106,12 +108,12 @@
     </header>
 
     <main class="gallery">
-        <div class="gallery-item tall"><img src="4L8A9815.jpg" alt="Chef"></div>
-        <div class="gallery-item"><img src="Custodio + Le Moustache-25.jpg" alt="Pimentões"></div>
-        <div class="gallery-item"><img src="4L8A9987.jpg" alt="Sobremesa"></div>
-        <div class="gallery-item wide"><img src="Le Moustache + Custodio-262.jpg" alt="Carne"></div>
-        <div class="gallery-item"><img src="IMG_5964.jpg" alt="Prato"></div>
-        <div class="gallery-item"><img src="4L8A6876.jpg" alt="Mise en place"></div>
+        <div class="gallery-item tall"><img src="chef.jpg" alt="Orchestra"></div>
+        <div class="gallery-item"><img src="pimentoes.jpg" alt="Orchestra"></div>
+        <div class="gallery-item"><img src="sobremesa.jpg" alt="Orchestra"></div>
+        <div class="gallery-item wide"><img src="carne.jpg" alt="Orchestra"></div>
+        <div class="gallery-item"><img src="entrada.jpg" alt="Orchestra"></div>
+        <div class="gallery-item"><img src="salada.jpg" alt="Orchestra"></div>
     </main>
 
     <footer>
