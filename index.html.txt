@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORCHESTRA | Gastronomia em Movimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Urbanist:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gelo: #EFEFEF;
+            --marrom: #2B2A25;
+            --areia: #EECFA2;
+            --azul: #B9CAD7;
+        }
+
+        body {
+            background-color: var(--gelo);
+            color: var(--marrom);
+            font-family: 'Urbanist', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-transform: uppercase; /* Estética editorial */
+            letter-spacing: 0.1em;
+        }
+
+        header {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .headline {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2rem, 8vw, 5rem);
+            line-height: 1;
+            margin-bottom: 20px;
+            max-width: 900px;
+            font-style: italic;
+        }
+
+        .subheadline {
+            font-size: 0.9rem;
+            font-weight: 300;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            border: 1px solid var(--marrom);
+            padding: 8px 20px;
+            margin-bottom: 40px;
+            font-size: 0.7rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 60px;
+            padding: 20px;
+        }
+
+        .photo-placeholder {
+            aspect-ratio: 3/4;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            /* Se você tiver as fotos, basta trocar o background-color por background-image */
+            filter: grayscale(100%); /* Efeito clássico */
+            transition: 0.5s;
+        }
+
+        .photo-placeholder:hover {
+            filter: grayscale(0%);
+        }
+
+        footer {
+            padding: 40px;
+            font-size: 0.7rem;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(43, 42, 37, 0.1);
+        }
+
+        a {
+            color: var(--marrom);
+            text-decoration: none;
+            border-bottom: 1px solid var(--marrom);
+        }
+
+        @media (max-width: 600px) {
+            footer { flex-direction: column; gap: 20px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo">ORCHESTRA</h1>
+    </header>
+
+    <main>
+        <div class="status-badge">Abertura em breve</div>
+        
+        <h2 class="headline">Gastronomia mutável para momentos únicos.</h2>
+        
+        <p class="subheadline">
+            Do burger de sexta ao assado de domingo. <br> 
+            Curadoria para o seu ritmo.
+        </p>
+
+        <div class="gallery">
+            <div class="photo-placeholder">PHOTO 01</div>
+            <div class="photo-placeholder">PHOTO 02</div>
+            <div class="photo-placeholder">PHOTO 03</div>
+        </div>
+    </main>
+
+    <footer>
+        <div>ORCHESTRA &copy; 2024</div>
+        <div>PORTO ALEGRE / RS</div>
+        <div><a href="https://instagram.com/SEU_INSTAGRAM" target="_blank">INSTAGRAM</a></div>
+    </footer>
+
+</body>
+</html>
