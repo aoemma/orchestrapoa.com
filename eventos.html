@@ -4,186 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos | Orchestra | Porto Alegre</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* MIV Orchestra - Paleta Areia */
-        :root {
-            --areia-claro: #F1E4D3;
-            --areia-escuro: #E2D1B9;
-            --texto: #3F2E23;
-            --header-font: 'Cormorant Garamond', serif;
-            --body-font: 'Inter', sans-serif;
-        }
+        :root { --areia: #F1E4D3; --areia-foto: #E2D1B9; --texto: #3F2E23; }
+        body { background-color: var(--areia); color: var(--texto); font-family: 'Inter', sans-serif; margin: 0; -webkit-font-smoothing: antialiased; }
+        nav { padding: 40px; text-align: center; position: sticky; top: 0; background: var(--areia); z-index: 1000; border-bottom: 1px solid rgba(63,46,35,0.05); }
+        nav a { text-decoration: none; color: var(--texto); margin: 0 20px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 3px; font-weight: 400; font-style: normal; transition: opacity 0.3s ease; }
+        nav a:hover { opacity: 0.6; }
+        nav a.active { border-bottom: 1px solid var(--texto); padding-bottom: 5px; font-weight: 600; }
+        main { max-width: 1400px; margin: 60px auto; padding: 0 40px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; text-transform: uppercase; letter-spacing: 10px; text-align: center; margin-bottom: 80px; font-style: normal; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; grid-auto-flow: dense; }
+        .gallery-item { background-color: var(--areia-foto); overflow: hidden; position: relative; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .gallery-item:hover img { transform: scale(1.04); }
+        
+        /* Layout Editorial Classes */
+        .tall { grid-row: span 2; aspect-ratio: 2/3; }
+        .wide { grid-column: span 2; aspect-ratio: 16/9; }
+        .square { aspect-ratio: 1/1; }
 
-        body {
-            background-color: var(--areia-claro);
-            color: var(--texto);
-            font-family: var(--body-font);
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Navegação */
-        nav {
-            background-color: rgba(241, 228, 211, 0.95);
-            padding: 25px 0;
-            text-align: center;
-            border-bottom: 1px solid rgba(63, 46, 35, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: inline-flex;
-            gap: 30px;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--texto);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            font-weight: 400;
-            font-style: normal; /* Sem Itálico conforme manual */
-            transition: opacity 0.3s ease;
-        }
-        nav a:hover, nav a.active {
-            opacity: 0.6;
-            font-weight: 600;
-        }
-
-        /* Conteúdo */
-        main {
-            max-width: 1400px;
-            margin: 80px auto;
-            padding: 0 40px;
-        }
-
-        h1 {
-            font-family: var(--header-font);
-            font-size: 3.5rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 10px;
-            text-align: center;
-            margin-bottom: 20px;
-            font-style: normal;
-        }
-
-        .page-subtitle {
-            font-family: var(--body-font);
-            font-size: 0.9rem;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            opacity: 0.7;
-            margin-bottom: 80px;
-        }
-
-        /* Galeria Estilo Editorial */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            grid-auto-flow: dense;
-        }
-
-        .gallery-item {
-            background-color: var(--areia-escuro);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Classes de Destaque */
-        .tall { grid-row: span 2; }
-        .wide { grid-column: span 2; }
-
-        footer {
-            margin-top: 120px;
-            padding: 60px 20px;
-            text-align: center;
-            background-color: var(--areia-escuro);
-            font-family: var(--header-font);
-            font-size: 1.5rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-            font-style: normal;
-        }
-
-        @media (max-width: 768px) {
-            .gallery { grid-template-columns: 1fr; }
-            .tall, .wide { grid-row: auto; grid-column: auto; }
-            h1 { font-size: 2.5rem; }
+        footer { padding: 120px 20px; text-align: center; opacity: 0.5; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 3px; border-top: 1px solid rgba(63,46,35,0.05); }
+        
+        @media (max-width: 1024px) { .gallery { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; } }
+        @media (max-width: 768px) { 
+            main { padding: 0 20px; margin: 40px auto; }
+            .wide { grid-column: span 1; aspect-ratio: 1/1; } 
+            .tall { grid-row: auto; aspect-ratio: 1/1; }
+            h2 { font-size: 2rem; letter-spacing: 6px; }
         }
     </style>
 </head>
 <body>
-
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="eventos.html" class="active">Eventos</a></li>
-            <li><a href="#">Cardápio</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
+        <a href="index.html">Home</a>
+        <a href="eventos.html" class="active">Eventos</a>
     </nav>
-
     <main>
-        <h1>Eventos</h1>
-        <p class="page-subtitle">Experiências Gastronômicas Orchestra</p>
-
+        <h2>Experiências Orchestra</h2>
         <div class="gallery">
-            <div class="gallery-item"><img src="tomate.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item tall"><img src="prata.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="peixe.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="arroz.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item wide"><img src="montando.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="saladapera.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="maitre.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item tall"><img src="suspeito.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="tartare.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="bacalhau.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item wide"><img src="mesafarta.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="tortei.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="panelas.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="tomate2.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="mesabatata.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item tall"><img src="poulet.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="salada.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="buffet.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="saladao.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="verrine.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item tall"><img src="prime.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="vinho.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="mesadrink.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item wide"><img src="poivre.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="camarao.jpg" alt="Evento Orchestra"></div>
-            <div class="gallery-item"><img src="linguica.jpg" alt="Evento Orchestra"></div>
+            <div class="gallery-item tall"><img src="chef.jpg"></div>
+            <div class="gallery-item wide"><img src="pimentoes.jpg"></div>
+            <div class="gallery-item square"><img src="sobremesa.jpg"></div>
+            <div class="gallery-item square"><img src="entrada.jpg"></div>
+            <div class="gallery-item tall"><img src="carne.jpg"></div>
+            
+            <div class="gallery-item square"><img src="tomate.jpg"></div>
+            <div class="gallery-item tall"><img src="prata.jpg"></div>
+            <div class="gallery-item square"><img src="peixe.jpg"></div>
+            <div class="gallery-item square"><img src="arroz.jpg"></div>
+            <div class="gallery-item wide"><img src="montando.jpg"></div>
+            <div class="gallery-item square"><img src="saladapera.jpg"></div>
+            <div class="gallery-item square"><img src="maitre.jpg"></div>
+            <div class="gallery-item tall"><img src="suspeito.jpg"></div>
+            <div class="gallery-item square"><img src="tartare.jpg"></div>
+            <div class="gallery-item square"><img src="bacalhau.jpg"></div>
+            <div class="gallery-item wide"><img src="mesafarta.jpg"></div>
+            <div class="gallery-item square"><img src="tortei.jpg"></div>
+            <div class="gallery-item square"><img src="panelas.jpg"></div>
+            <div class="gallery-item square"><img src="tomate2.jpg"></div>
+            <div class="gallery-item square"><img src="mesabatata.jpg"></div>
+            <div class="gallery-item tall"><img src="poulet.jpg"></div>
+            <div class="gallery-item square"><img src="salada.jpg"></div>
+            <div class="gallery-item square"><img src="buffet.jpg"></div>
+            <div class="gallery-item square"><img src="saladao.jpg"></div>
+            <div class="gallery-item square"><img src="verrine.jpg"></div>
+            <div class="gallery-item tall"><img src="prime.jpg"></div>
+            <div class="gallery-item square"><img src="vinho.jpg"></div>
+            <div class="gallery-item square"><img src="mesadrink.jpg"></div>
+            <div class="gallery-item wide"><img src="poivre.jpg"></div>
+            <div class="gallery-item square"><img src="camarao.jpg"></div>
+            <div class="gallery-item square"><img src="linguica.jpg"></div>
         </div>
     </main>
-
-    <footer>
-        Orchestra • Gastronomia Mutável
-    </footer>
-
+    <footer>Orchestra • Gastronomia Mutável • Porto Alegre</footer>
 </body>
 </html>
