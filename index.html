@@ -4,121 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orchestra | Porto Alegre</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* MIV Orchestra - Paleta Areia */
-        :root {
-            --cor-areia-escuro: #DCCFBF; /* Areia mais presente */
-            --cor-areia-claro: #E8D8C3; 
-            --cor-texto: #2C1E16; /* Marrom profundo */
-        }
+        :root { --areia: #E8D8C3; --texto: #2C1E16; }
+        body { background-color: var(--areia); color: var(--texto); font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+        
+        /* Menu de Navegação */
+        nav { padding: 40px; text-align: center; border-bottom: 1px solid rgba(44,30,22,0.1); }
+        nav a { text-decoration: none; color: var(--texto); margin: 0 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; font-weight: 400; }
+        nav a:hover { opacity: 0.5; }
 
-        body {
-            background-color: var(--cor-areia-claro);
-            color: var(--cor-texto);
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 60px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 80px;
-            width: 100%;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            letter-spacing: 12px;
-            text-transform: uppercase;
-            margin: 0;
-            font-style: normal; /* Zero itálico */
-        }
-
-        .subtitle {
-            font-size: 0.8rem;
-            letter-spacing: 5px;
-            opacity: 0.8;
-            margin-top: 20px;
-            font-weight: 400;
-        }
-
-        /* Grid Editorial */
-        .gallery {
-            max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            background-color: var(--cor-areia-escuro);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Layout dinâmico */
-        .tall { grid-row: span 2; }
-        .wide { grid-column: span 2; }
-
-        footer {
-            margin-top: 120px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 300;
-            font-style: normal; /* Zero itálico */
-            letter-spacing: 2px;
-            text-align: center;
-            border-top: 1px solid rgba(44, 30, 22, 0.1);
-            padding-top: 40px;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; letter-spacing: 6px; }
-            .wide { grid-column: span 1; }
-        }
+        header { text-align: center; padding: 100px 20px; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; letter-spacing: 12px; text-transform: uppercase; margin: 0; }
+        .subtitle { font-size: 0.8rem; letter-spacing: 5px; opacity: 0.8; margin-top: 20px; }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="#" style="opacity: 0.3;">Cardápio</a> <a href="#" style="opacity: 0.3;">Sobre</a>
+        <a href="#" style="opacity: 0.3;">Contato</a>
+    </nav>
 
     <header>
         <h1>Orchestra</h1>
-        <p class="subtitle">PORTO ALEGRE • EM BREVE</p>
+        <p class="subtitle">PORTO ALEGRE • GASTRONOMIA MUTÁVEL</p>
     </header>
-
-    <main class="gallery">
-        <div class="gallery-item tall"><img src="chef.jpg" alt="Orchestra"></div>
-        <div class="gallery-item"><img src="pimentoes.jpg" alt="Orchestra"></div>
-        <div class="gallery-item"><img src="sobremesa.jpg" alt="Orchestra"></div>
-        <div class="gallery-item wide"><img src="carne.jpg" alt="Orchestra"></div>
-        <div class="gallery-item"><img src="entrada.jpg" alt="Orchestra"></div>
-        <div class="gallery-item"><img src="salada.jpg" alt="Orchestra"></div>
-    </main>
-
-    <footer>
-        A harmonia entre o tempo e o paladar.
-    </footer>
-
 </body>
 </html>
