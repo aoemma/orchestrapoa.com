@@ -1,94 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos | Orchestra</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        :root { --areia: #F1E4D3; --areia-foto: #E2D1B9; --texto: #3F2E23; }
-        body { background-color: var(--areia); color: var(--texto); font-family: 'Inter', sans-serif; margin: 0; -webkit-font-smoothing: antialiased; }
-        
-        nav { padding: 40px; text-align: center; position: sticky; top: 0; background: var(--areia); z-index: 1000; border-bottom: 1px solid rgba(63,46,35,0.05); }
-        nav a { text-decoration: none; color: var(--texto); margin: 0 20px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 3px; font-style: normal; }
-        nav a.active { border-bottom: 1px solid var(--texto); padding-bottom: 5px; font-weight: 600; }
-
-        main { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-        h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; text-transform: uppercase; letter-spacing: 8px; text-align: center; margin-bottom: 60px; font-style: normal; }
-
-        /* Grade Padronizada */
-        .gallery { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-            gap: 15px; 
-        }
-
-        .gallery-item { 
-            background-color: var(--areia-foto); 
-            aspect-ratio: 1 / 1; /* Força o formato quadrado em todas */
-            overflow: hidden; 
-            position: relative;
-        }
-
-        .gallery-item img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer */
-            display: block; 
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img { transform: scale(1.05); }
-
-        footer { padding: 80px 20px; text-align: center; opacity: 0.5; font-size: 0.8rem; letter-spacing: 2px; }
-
-        @media (max-width: 600px) {
-            .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; } /* 2 colunas no celular */
-            h2 { font-size: 1.8rem; }
-        }
-    </style>
-</head>
-<body>
-    <nav>
+<nav>
         <a href="index.html">Home</a>
         <a href="eventos.html" class="active">Eventos</a>
     </nav>
+
     <main>
         <h2>Experiências</h2>
         <div class="gallery">
-            <div class="gallery-item"><img src="img/chef.jpg"></div>
-            <div class="gallery-item"><img src="img/pimentoes.jpg"></div>
-            <div class="gallery-item"><img src="img/sobremesa.jpg"></div>
-            <div class="gallery-item"><img src="img/entrada.jpg"></div>
-            <div class="gallery-item"><img src="img/carne.jpg"></div>
-            <div class="gallery-item"><img src="img/tomate.jpg"></div>
-            <div class="gallery-item"><img src="img/prata.jpg"></div>
-            <div class="gallery-item"><img src="img/peixe.jpg"></div>
-            <div class="gallery-item"><img src="img/arroz.jpg"></div>
-            <div class="gallery-item"><img src="img/montando.jpg"></div>
-            <div class="gallery-item"><img src="img/saladapera.jpg"></div>
-            <div class="gallery-item"><img src="img/maitre.jpg"></div>
-            <div class="gallery-item"><img src="img/suspeito.jpg"></div>
-            <div class="gallery-item"><img src="img/tartare.jpg"></div>
-            <div class="gallery-item"><img src="img/bacalhau.jpg"></div>
-            <div class="gallery-item"><img src="img/mesafarta.jpg"></div>
-            <div class="gallery-item"><img src="img/tortei.jpg"></div>
-            <div class="gallery-item"><img src="img/panelas.jpg"></div>
-            <div class="gallery-item"><img src="img/tomate2.jpg"></div>
-            <div class="gallery-item"><img src="img/mesabatata.jpg"></div>
-            <div class="gallery-item"><img src="img/poulet.jpg"></div>
-            <div class="gallery-item"><img src="img/salada.jpg"></div>
-            <div class="gallery-item"><img src="img/buffet.jpg"></div>
-            <div class="gallery-item"><img src="img/saladao.jpg"></div>
-            <div class="gallery-item"><img src="img/verrine.jpg"></div>
-            <div class="gallery-item"><img src="img/prime.jpg"></div>
-            <div class="gallery-item"><img src="img/vinho.jpg"></div>
-            <div class="gallery-item"><img src="img/mesadrink.jpg"></div>
-            <div class="gallery-item"><img src="img/poivre.jpg"></div>
-            <div class="gallery-item"><img src="img/camarao.jpg"></div>
-            <div class="gallery-item"><img src="img/linguica.jpg"></div>
+            <div class="gallery-item tall"><img src="chef.jpg"></div>
+            <div class="gallery-item wide"><img src="pimentoes.jpg"></div>
+            <div class="gallery-item square"><img src="sobremesa.jpg"></div>
+            <div class="gallery-item square"><img src="entrada.jpg"></div>
+            <div class="gallery-item tall"><img src="carne.jpg"></div>
+            <div class="gallery-item square"><img src="tomate.jpg"></div>
+            <div class="gallery-item tall"><img src="prata.jpg"></div>
+            <div class="gallery-item square"><img src="peixe.jpg"></div>
+            <div class="gallery-item square"><img src="arroz.jpg"></div>
+            <div class="gallery-item wide"><img src="montando.jpg"></div>
+            <div class="gallery-item square"><img src="saladapera.jpg"></div>
+            <div class="gallery-item square"><img src="maitre.jpg"></div>
+            <div class="gallery-item tall"><img src="suspeito.jpg"></div>
+            <div class="gallery-item square"><img src="tartare.jpg"></div>
+            <div class="gallery-item square"><img src="bacalhau.jpg"></div>
+            <div class="gallery-item wide"><img src="mesafarta.jpg"></div>
+            <div class="gallery-item square"><img src="tortei.jpg"></div>
+            <div class="gallery-item square"><img src="panelas.jpg"></div>
+            <div class="gallery-item square"><img src="tomate2.jpg"></div>
+            <div class="gallery-item square"><img src="mesabatata.jpg"></div>
+            <div class="gallery-item tall"><img src="poulet.jpg"></div>
+            <div class="gallery-item square"><img src="salada.jpg"></div>
+            <div class="gallery-item square"><img src="buffet.jpg"></div>
+            <div class="gallery-item square"><img src="saladao.jpg"></div>
+            <div class="gallery-item square"><img src="verrine.jpg"></div>
+            <div class="gallery-item tall"><img src="prime.jpg"></div>
+            <div class="gallery-item square"><img src="vinho.jpg"></div>
+            <div class="gallery-item square"><img src="mesadrink.jpg"></div>
+            <div class="gallery-item wide"><img src="poivre.jpg"></div>
+            <div class="gallery-item square"><img src="camarao.jpg"></div>
+            <div class="gallery-item square"><img src="linguica.jpg"></div>
         </div>
     </main>
-    <footer>ORCHESTRA • PORTO ALEGRE</footer>
-</body>
-</html>
