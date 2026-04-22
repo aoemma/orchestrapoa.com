@@ -6,42 +6,21 @@
     <title>Eventos | Orchestra</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        :root { --areia: #F1E4D3; --texto: #3F2E23; --cinza-leve: #E2D1B9; }
-        body { background-color: var(--areia); color: var(--texto); font-family: 'Inter', sans-serif; margin: 0; -webkit-font-smoothing: antialiased; }
-        
-        nav { padding: 40px 20px; text-align: center; position: sticky; top: 0; background: var(--areia); z-index: 100; border-bottom: 1px solid rgba(63,46,35,0.05); }
-        nav a { text-decoration: none; color: var(--texto); margin: 0 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+        :root { --areia: #F1E4D3; --texto: #3F2E23; --areia-foto: #E2D1B9; }
+        body { background-color: var(--areia); color: var(--texto); font-family: 'Inter', sans-serif; margin: 0; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        nav { padding: 30px 10px; text-align: center; position: sticky; top: 0; background: var(--areia); z-index: 100; border-bottom: 1px solid rgba(63,46,35,0.05); }
+        nav a { text-decoration: none; color: var(--texto); margin: 0 10px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
         nav a.active { border-bottom: 1px solid var(--texto); padding-bottom: 5px; font-weight: 600; }
-
-        main { max-width: 1400px; margin: 60px auto; padding: 0 20px; }
-        h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; text-transform: uppercase; letter-spacing: 10px; text-align: center; margin-bottom: 80px; }
-
-        /* Grid Editorial */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; grid-auto-flow: dense; }
-        .gallery-item { background-color: var(--cinza-leve); overflow: hidden; position: relative; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
-        .gallery-item:hover img { transform: scale(1.02); }
-
-        /* Proporções */
-        .tall { grid-row: span 2; aspect-ratio: 2/3; }
-        .wide { grid-column: span 2; aspect-ratio: 16/9; }
-        .square { aspect-ratio: 1/1; }
-
-        /* Responsividade Celular */
-        @media (max-width: 768px) {
-            .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-            .gallery-item.wide, .gallery-item.tall { grid-column: span 1; grid-row: auto; aspect-ratio: 1/1; }
-            h2 { font-size: 1.8rem; letter-spacing: 5px; }
-            nav { padding: 25px 10px; }
-        }
+        main { max-width: 1400px; margin: 40px auto; padding: 0 15px; }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 8vw, 2.5rem); font-weight: 300; text-transform: uppercase; letter-spacing: 6px; text-align: center; margin-bottom: 40px; }
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; grid-auto-flow: dense; }
+        @media (min-width: 769px) { .gallery { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; } .tall { grid-row: span 2; aspect-ratio: 2/3; } .wide { grid-column: span 2; aspect-ratio: 16/9; } }
+        .gallery-item { background-color: var(--areia-foto); overflow: hidden; aspect-ratio: 1/1; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
     </style>
 </head>
 <body>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="eventos.html" class="active">Eventos</a>
-    <a href="sobre.html">Sobre</a>
-</nav>
+    <nav><a href="index.html">Home</a><a href="eventos.html" class="active">Eventos</a><a href="sobre.html">Sobre</a></nav>
     <main>
         <h2>Experiências</h2>
         <div class="gallery">
