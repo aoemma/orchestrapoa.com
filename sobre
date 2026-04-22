@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | Orchestra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --areia: #F1E4D3; --texto: #3F2E23; }
+        
+        body { 
+            background-color: var(--areia); 
+            color: var(--texto); 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased; 
+        }
+        
+        nav { 
+            padding: 40px 20px; 
+            text-align: center; 
+        }
+        
+        nav a { 
+            text-decoration: none; 
+            color: var(--texto); 
+            margin: 0 15px; 
+            text-transform: uppercase; 
+            font-size: 0.8rem; 
+            letter-spacing: 2px; 
+            font-weight: 400;
+        }
+        
+        nav a.active { 
+            border-bottom: 1px solid var(--texto); 
+            padding-bottom: 5px; 
+            font-weight: 600; 
+        }
+
+        main { 
+            max-width: 800px; 
+            margin: 80px auto; 
+            padding: 0 30px; 
+            text-align: center;
+        }
+
+        h2 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 2.5rem; 
+            font-weight: 300; 
+            text-transform: uppercase; 
+            letter-spacing: 10px; 
+            margin-bottom: 60px; 
+        }
+
+        .content p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+            text-align: justify;
+            text-align-last: center; /* Mantém o bloco elegante e centralizado */
+        }
+
+        footer { 
+            margin-top: 100px;
+            padding: 40px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            main { margin: 40px auto; }
+            h2 { font-size: 1.8rem; letter-spacing: 6px; }
+            .content p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="sobre.html" class="active">Sobre</a>
+    </nav>
+
+    <main>
+        <h2>Sobre</h2>
+        
+        <div class="content">
+            <p>
+                Orchestra é uma rotisserie e catering de Porto Alegre, onde a gastronomia cosmopolita se une a ingredientes locais. O cardápio transita entre referências mediterrâneas e clássicas, sempre valorizando a sazonalidade e a precisão, ainda que sem grandes intervenções, nos preparos.
+            </p>
+            <p>
+                Pensado para ser vivido em casa ou em encontros íntimos, cada entrega carrega um senso de ritual: da finalização dos pratos à presença de textos e trilhas que acompanham a experiência.
+            </p>
+            <p>
+                Desde o início, a Orchestra entende a comida como ofício e atmosfera, construindo sua presença através de edições limitadas, menus personalizados e um desejo contínuo de transmitir uma elegância despretensiosa.
+            </p>
+        </div>
+    </main>
+
+    <footer>ORCHESTRA</footer>
+</body>
+</html>
