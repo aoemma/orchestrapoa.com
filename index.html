@@ -7,29 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
     <style>
         :root { --areia: #F1E4D3; --texto: #3F2E23; }
-        body { background-color: var(--areia); color: var(--texto); font-family: 'Inter', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; -webkit-font-smoothing: antialiased; }
-        
-        /* Navegação */
-        nav { padding: 50px 20px; text-align: center; }
-        nav a { text-decoration: none; color: var(--texto); margin: 0 20px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 3px; font-weight: 400; transition: opacity 0.3s; }
-        nav a:hover { opacity: 0.5; }
+        body { background-color: var(--areia); color: var(--texto); font-family: 'Inter', sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        nav { padding: 40px 20px; text-align: center; }
+        nav a { text-decoration: none; color: var(--texto); margin: 0 15px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
         nav a.active { border-bottom: 1px solid var(--texto); padding-bottom: 5px; font-weight: 600; }
-
-        /* Centro */
-        header { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding-bottom: 10vh; }
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 6rem); font-weight: 300; letter-spacing: 20px; text-transform: uppercase; margin: 0; line-height: 1; }
-        .subtitle { font-size: 0.75rem; letter-spacing: 8px; opacity: 0.6; margin-top: 30px; text-transform: uppercase; }
+        header { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 15vw, 6rem); font-weight: 300; letter-spacing: 12px; text-transform: uppercase; margin: 0; width: 100%; }
+        .subtitle { font-size: 0.7rem; letter-spacing: 5px; opacity: 0.6; margin-top: 20px; text-transform: uppercase; }
+        @media (max-width: 600px) { h1 { letter-spacing: 6px; } }
     </style>
 </head>
 <body>
-    <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="eventos.html">Eventos</a>
-    <a href="sobre.html">Sobre</a>
-</nav>
-    <header>
-        <h1>Orchestra</h1>
-        <p class="subtitle">Porto Alegre • Gastronomia Mutável</p>
-    </header>
+    <nav><a href="index.html" class="active">Home</a><a href="eventos.html">Eventos</a><a href="sobre.html">Sobre</a></nav>
+    <header><h1>Orchestra</h1><p class="subtitle">Porto Alegre • Gastronomia Mutável</p></header>
 </body>
 </html>
